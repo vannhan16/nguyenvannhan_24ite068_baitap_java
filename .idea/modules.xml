@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Exercise_Thread.iml" filepath="$PROJECT_DIR$/Exercise_Thread.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/IOStream.iml" filepath="$PROJECT_DIR$/IOStream.iml" />
+>>>>>>> 91b1d0b (code io streams)
     </modules>
   </component>
 </project>
