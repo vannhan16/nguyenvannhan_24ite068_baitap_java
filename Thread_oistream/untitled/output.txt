@@ -1,0 +1,4 @@
+Thread 1: Xin chào từ Java!
+Thread 2: Lập trình đa luồng rất thú vị!
+Thread 1: Xin chào từ Java!
+Thread 2: Lập trình đa luồng rất thú vị!
