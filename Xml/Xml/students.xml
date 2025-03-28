@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<students>
+                    
+    
+    
+        
+    
+    
+    
+    <student id="123">
+                                
+        
+        
+        <name>tran thi thanh nguyẹt </name>
+                                
+        
+        
+        <age>20</age>
+                                
+        
+        
+        <major>truyền thông đa phương tiện </major>
+                            
+    
+    
+    </student>
+            
+    
+    
+    <student id="169">
+                        
+        
+        <name>nguyen van nhan </name>
+                        
+        
+        <age>19</age>
+                        
+        
+        <major>cong nghe thong tin </major>
+                    
+    
+    </student>
+        
+
+</students>
