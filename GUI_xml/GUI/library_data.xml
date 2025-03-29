@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<books>
+    <book>
+        <title>sách công nghệ thông tin </title>
+        <author>nguyênx văn nhân </author>
+        <year>2006</year>
+        <publisher>nguyen cong tri</publisher>
+        <pages>23</pages>
+        <genre>tiểu thuyết </genre>
+        <price>25000.0</price>
+        <isbn>75</isbn>
+    </book>
+</books>

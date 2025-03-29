@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.LibraryController">
+    <top>
+        <Label text="Quản Lý Thư Viện Sách" style="-fx-font-size: 20px; -fx-font-weight: bold;" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn text="Tên sách" fx:id="titleColumn"/>
+                <TableColumn text="Tác giả" fx:id="authorColumn"/>
+                <TableColumn text="Năm" fx:id="yearColumn"/>
+                <TableColumn text="Nhà xuất bản" fx:id="publisherColumn"/>
+                <TableColumn text="Số trang" fx:id="pagesColumn"/>
+                <TableColumn text="Thể loại" fx:id="genreColumn"/>
+                <TableColumn text="Giá" fx:id="priceColumn"/>
+                <TableColumn text="Mã sách" fx:id="isbnColumn"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Thêm" fx:id="addButton"/>
+            <Button text="Sửa" fx:id="editButton"/>
+            <Button text="Xóa" fx:id="deleteButton"/>
+        </HBox>
+    </bottom>
+</BorderPane>
