@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Exercise2.Controller.EncryptController"
+            padding="20">
+
+    <top>
+        <HBox spacing="10">
+            <Label text="Chọn thuật toán:"/>
+            <ComboBox fx:id="algoBox">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="AES"/>
+                        <String fx:value="RSA"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" padding="10">
+            <TextArea fx:id="inputText" promptText="Nhập văn bản cần mã hóa..." prefRowCount="5"/>
+            <HBox spacing="10">
+                <Button text="Mã hóa" onAction="#handleEncrypt"/>
+                <Button text="Giải mã" onAction="#handleDecrypt"/>
+            </HBox>
+            <Label text="Kết quả:"/>
+            <TextArea fx:id="outputText" editable="false" prefRowCount="5"/>
+            <Label fx:id="statusLabel" textFill="green"/>
+        </VBox>
+    </center>
+
+</BorderPane>
