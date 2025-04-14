@@ -9,6 +9,8 @@ module com.mahoa {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens com.mahoa to javafx.fxml;
-    exports com.mahoa;
+    opens Exercise1.Controller to javafx.fxml;
+    opens Exercise1 to javafx.fxml;
+    opens view to javafx.fxml;
+    exports Exercise1;
 }

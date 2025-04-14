@@ -8,13 +8,14 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/auth_view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/auth_view.fxml"));
         primaryStage.setTitle("Bảo mật mật khẩu với SHA");
         primaryStage.setScene(new Scene(loader.load()));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
+        System.out.println("App đang chạy...");
         launch(args);
     }
 }

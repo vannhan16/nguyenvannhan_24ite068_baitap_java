@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.database1.controller.OrderHistoryController">
+    <top>
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Lịch sử Đơn hàng" BorderPane.alignment="CENTER" />
+    </top>
+    <center>
+        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label text="Chọn khách hàng:" />
+                <ComboBox fx:id="customerComboBox" prefWidth="200.0" onAction="#loadOrderHistory" />
+            </HBox>
+
+            <TableView fx:id="orderTableView" prefHeight="200.0" prefWidth="200.0">
+                <columns>
+                    <TableColumn fx:id="orderIdColumn" prefWidth="100.0" text="Mã đơn hàng" />
+                    <TableColumn fx:id="orderDateColumn" prefWidth="150.0" text="Ngày đặt hàng" />
+                    <TableColumn fx:id="totalAmountColumn" prefWidth="150.0" text="Tổng tiền" />
+                    <TableColumn prefWidth="150.0" text="Chi tiết" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER_RIGHT">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <Button onAction="#closeOrderHistoryView" text="Đóng" />
+        </HBox>
+    </bottom>
+</BorderPane>
