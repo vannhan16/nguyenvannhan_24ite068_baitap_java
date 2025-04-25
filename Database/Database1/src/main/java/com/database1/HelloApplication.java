@@ -11,9 +11,9 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("com.database1/views/main-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/database1/main-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-            scene.getStylesheets().add(getClass().getResource("com.database1/style.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/com/database1/style.css").toExternalForm());
             stage.setTitle("Ứng dụng Quản lý Đơn hàng");
             stage.setScene(scene);
             stage.show();

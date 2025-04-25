@@ -1,97 +1,76 @@
 package com.database1.dao;
 
+import com.database1.database.DatabaseConnector;
 import com.database1.model.Order;
 import com.database1.model.OrderItem;
+
 import java.sql.*;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class OrderDAO {
 
-    private Connection getConnection() throws SQLException {
-        // TODO: Implement logic to establish database connection
-        return null; // Placeholder
-    }
+    // Thêm đơn hàng và các sản phẩm đi kèm
+    public boolean addOrder(Order order) {
+        String orderSql = "INSERT INTO orders (customer_id, order_date, total_amount) VALUES (?, ?, ?)";
+        String orderItemSql = "INSERT INTO order_items (order_id, product_id, quantity) VALUES (?, ?, ?)";
 
-    public void saveOrder(Order order, List<OrderItem> orderItems) {
-        String sqlOrder = "INSERT INTO orders (customer_id, order_date, total_amount) VALUES (?, ?, ?)";
-        String sqlOrderItem = "INSERT INTO order_items (order_id, product_id, quantity, unit_price, total_price) VALUES (?, ?, ?, ?, ?)";
-        Connection connection = null;
-        PreparedStatement orderStatement = null;
-        PreparedStatement itemStatement = null;
-        ResultSet generatedKeys = null;
+        try (Connection conn = DatabaseConnector.getConnection()) {
+            conn.setAutoCommit(false);
 
-        try {
-            connection = getConnection();
-            connection.setAutoCommit(false); // Start transaction
+            PreparedStatement orderStmt = conn.prepareStatement(orderSql, Statement.RETURN_GENERATED_KEYS);
+            orderStmt.setInt(1, order.getCustomerId());
+            orderStmt.setDate(2, new java.sql.Date(order.getOrderDate().getTime()));
+            orderStmt.setDouble(3, order.getTotalAmount());
+            orderStmt.executeUpdate();
 
-            orderStatement = connection.prepareStatement(sqlOrder, Statement.RETURN_GENERATED_KEYS);
-            orderStatement.setInt(1, order.getCustomerId());
-            orderStatement.setDate(2, new java.sql.Date(order.getOrderDate().getTime()));
-            orderStatement.setDouble(3, order.getTotalAmount());
-            orderStatement.executeUpdate();
-
-            generatedKeys = orderStatement.getGeneratedKeys();
-            int orderId;
+            ResultSet generatedKeys = orderStmt.getGeneratedKeys();
             if (generatedKeys.next()) {
-                orderId = generatedKeys.getInt(1);
-                for (OrderItem item : orderItems) {
-                    itemStatement = connection.prepareStatement(sqlOrderItem);
-                    itemStatement.setInt(1, orderId);
-                    itemStatement.setInt(2, item.getProductId());
-                    itemStatement.setInt(3, item.getQuantity());
-                    itemStatement.setDouble(4, item.getUnitPrice());
-                    itemStatement.setDouble(5, item.getTotalPrice());
-                    itemStatement.executeUpdate();
+                int orderId = generatedKeys.getInt(1);
+
+                for (OrderItem item : order.getItems()) {
+                    PreparedStatement itemStmt = conn.prepareStatement(orderItemSql);
+                    itemStmt.setInt(1, orderId);
+                    itemStmt.setInt(2, item.getProductId());
+                    itemStmt.setInt(3, item.getQuantity());
+                    itemStmt.executeUpdate();
                 }
+
+                conn.commit();
+                return true;
             }
 
-            connection.commit(); // Commit transaction
-
-        } catch (SQLException e) {
-            if (connection != null) {
-                try {
-                    connection.rollback(); // Rollback on error
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
+        } catch (Exception e) {
             e.printStackTrace();
-            // Handle database errors appropriately
-        } finally {
-            try { if (generatedKeys != null) generatedKeys.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (itemStatement != null) itemStatement.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (orderStatement != null) orderStatement.close(); } catch (SQLException e) { e.printStackTrace(); }
-            try { if (connection != null) connection.setAutoCommit(true); connection.close(); } catch (SQLException e) { e.printStackTrace(); }
         }
+
+        return false;
     }
 
+    // Truy xuất lịch sử đơn hàng của khách hàng
     public List<Order> getOrdersByCustomerId(int customerId) {
         List<Order> orders = new ArrayList<>();
-        String sql = "SELECT id, order_date, total_amount FROM orders WHERE customer_id = ?";
+        String query = "SELECT * FROM orders WHERE customer_id = ?";
 
-        try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (Connection conn = DatabaseConnector.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
 
-            statement.setInt(1, customerId);
-            ResultSet resultSet = statement.executeQuery();
+            stmt.setInt(1, customerId);
+            ResultSet rs = stmt.executeQuery();
 
-            while (resultSet.next()) {
+            while (rs.next()) {
                 Order order = new Order();
-                order.setId(resultSet.getInt("id"));
-                order.setCustomerId(customerId);
-                order.setOrderDate(resultSet.getDate("order_date"));
-                order.setTotalAmount(resultSet.getDouble("total_amount"));
+                order.setId(rs.getInt("id"));
+                order.setCustomerId(rs.getInt("customer_id"));
+                order.setOrderDate(rs.getDate("order_date"));
+                order.setTotalAmount(rs.getDouble("total_amount"));
                 orders.add(order);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            // Handle database errors appropriately
         }
+
         return orders;
     }
-
-    // Method to get order details (including order items) by order ID
-    // ...
 }

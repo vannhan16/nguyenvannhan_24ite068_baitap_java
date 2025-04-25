@@ -4,9 +4,9 @@ public class Product {
     private int id;
     private String name;
     private double price;
+    private int stock;
 
-    public Product() {
-    }
+    public Product() {}
 
     public Product(int id, String name, double price) {
         this.id = id;
@@ -14,6 +14,7 @@ public class Product {
         this.price = price;
     }
 
+    // Getter - Setter
     public int getId() {
         return id;
     }
@@ -37,9 +38,16 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+    public int getStock(){
+        return stock;
+    }
+    public void setStock(int stock){
+        this.stock = stock;
+    }
 
+    // Hiển thị trong ComboBox/TableView
     @Override
     public String toString() {
-        return name + " (" + price + " VNĐ)"; // Để hiển thị tên và giá trong ComboBox
+        return name + " - $" + price;
     }
 }

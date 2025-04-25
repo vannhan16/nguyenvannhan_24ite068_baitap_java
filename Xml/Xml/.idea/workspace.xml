@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa32ce4b-e253-4f98-9beb-44eecdd368e5" name="Changes" comment="" />
+    <list default="true" id="aa32ce4b-e253-4f98-9beb-44eecdd368e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/dao/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/dao/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/database/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/database/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Database/Database1/src/main/java/com/database1/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/resources/com/database1/views/add-order-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/resources/com/database1/views/main-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/resources/com/database1/views/order-history-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Database/Database1/src/main/resources/com/database1/views/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ma_hoa/Mahoa/src/main/java/Exercise1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ma_hoa/Mahoa/src/main/java/Exercise1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ma_hoa/Mahoa/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ma_hoa/Mahoa/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ma_hoa/Mahoa/src/main/resources/view/auth_view.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +111,7 @@
       <workItem from="1743172593478" duration="7248000" />
       <workItem from="1743180256106" duration="1628000" />
       <workItem from="1743245524661" duration="105000" />
+      <workItem from="1745386324068" duration="179000" />
     </task>
     <servers />
   </component>

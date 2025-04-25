@@ -11,6 +11,5 @@ module com.mahoa {
 
     opens Exercise1.Controller to javafx.fxml;
     opens Exercise1 to javafx.fxml;
-    opens view to javafx.fxml;
     exports Exercise1;
 }

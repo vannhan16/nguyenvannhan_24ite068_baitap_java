@@ -4,14 +4,15 @@ public class Customer {
     private int id;
     private String name;
 
-    public Customer() {
-    }
+    // Constructor
+    public Customer() {}
 
     public Customer(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
+    // Getter - Setter
     public int getId() {
         return id;
     }
@@ -28,8 +29,9 @@ public class Customer {
         this.name = name;
     }
 
+    // Để hiển thị trong ComboBox
     @Override
     public String toString() {
-        return name; // Để hiển thị tên trong ComboBox
+        return name;
     }
 }

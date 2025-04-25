@@ -2,17 +2,18 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.database1.controller.AddOrderController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.database1.controller.AddOrderController">
     <top>
         <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Thêm Đơn hàng Mới" BorderPane.alignment="CENTER" />
     </top>
@@ -23,15 +24,25 @@
             </padding>
             <GridPane hgap="10.0" vgap="10.0">
                 <Label text="Khách hàng:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <ComboBox fx:id="customerComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
                 <Label text="Sản phẩm:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <ComboBox fx:id="productComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                 <Label text="Số lượng:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                 <TextField fx:id="quantityTextField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                 <Button onAction="#addProductToOrder" text="Thêm Sản phẩm" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="customerTextFiled" GridPane.columnIndex="1" />
+            <TextField fx:id="productTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
             </GridPane>
 
             <TableView fx:id="orderItemTableView" prefHeight="200.0" prefWidth="200.0">
@@ -45,8 +56,8 @@
             </TableView>
 
             <HBox alignment="CENTER_RIGHT" spacing="10.0">
-                <Label text="Tổng tiền:" style="-fx-font-weight: bold;" />
-                <Label fx:id="totalAmountLabel" text="0.0 VNĐ" style="-fx-font-weight: bold;" />
+                <Label style="-fx-font-weight: bold;" text="Tổng tiền:" />
+                <Label fx:id="totalAmountLabel" style="-fx-font-weight: bold;" text="0.0 VNĐ" />
                 <Button onAction="#saveOrder" text="Lưu Đơn hàng" />
                 <Button onAction="#closeAddOrderView" text="Hủy" />
             </HBox>

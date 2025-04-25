@@ -1,23 +1,18 @@
 package com.database1.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     private int id;
     private int customerId;
     private Date orderDate;
     private double totalAmount;
+    private List<OrderItem> items;
 
-    public Order() {
-    }
+    public Order() {}
 
-    public Order(int id, int customerId, Date orderDate, double totalAmount) {
-        this.id = id;
-        this.customerId = customerId;
-        this.orderDate = orderDate;
-        this.totalAmount = totalAmount;
-    }
-
+    // Getter - Setter
     public int getId() {
         return id;
     }
@@ -48,5 +43,13 @@ public class Order {
 
     public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
     }
 }

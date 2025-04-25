@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.client.ChatController">
+  <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+  <!-- Kết nối Server -->
+  <HBox spacing="10">
+    <TextField fx:id="ipField" promptText="Địa chỉ IP" />
+    <TextField fx:id="portField" promptText="Port" />
+    <Button text="Kết nối" onAction="#handleConnect"/>
+  </HBox>
+
+  <!-- Khu vực hiển thị tin nhắn -->
+  <TextArea fx:id="messageArea" editable="false" wrapText="true" prefHeight="300"/>
+
+  <!-- Nhập và gửi tin nhắn -->
+  <HBox spacing="10">
+    <TextField fx:id="inputField" promptText="Nhập tin nhắn..." HBox.hgrow="ALWAYS"/>
+    <Button text="Gửi" onAction="#handleSend"/>
+  </HBox>
+</VBox>

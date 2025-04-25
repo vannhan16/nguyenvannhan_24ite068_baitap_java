@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.mahoa1.bt1_md5_sha.ControllerBT1">
+    <Label text="Nhập mật khẩu"/>
+    <TextField fx:id="inputField" promptText="Password"/>
+    <Button text="Mã hóa MD5" onAction="#encryptMD5"/>
+    <Button text="Mã hóa SHA-256" onAction="#encryptSHA"/>
+    <TextArea fx:id="resultArea" prefHeight="100" editable="false"/>
+</VBox>
